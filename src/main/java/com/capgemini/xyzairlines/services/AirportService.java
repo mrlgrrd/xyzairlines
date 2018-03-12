@@ -27,4 +27,8 @@ public class AirportService {
     public Iterable<Airport> allAirports(){
         return this.airportRepository.findAll();
     }
+
+    public void deleteAirport(Long id) {
+        this.airportRepository.delete(id);
+    }
 }
