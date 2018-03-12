@@ -40,6 +40,12 @@ public class Airplane {
         this.fuel = fuel;
     }
 
+    public Airplane(String name, String type) {
+        this.name = name;
+        this.type = type;
+        this.fuel = 5;
+    }
+
     /**
      * getters & setters
      */

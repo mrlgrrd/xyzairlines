@@ -31,4 +31,8 @@ public class AirportService {
     public void deleteAirport(Long id) {
         this.airportRepository.delete(id);
     }
+
+    public void save(Airport airport) {
+        this.airportRepository.save(airport);
+    }
 }

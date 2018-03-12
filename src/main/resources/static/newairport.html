@@ -6,11 +6,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
-    <title>Airports</title>
+    <title>New Airport</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-   <!-- <link rel="stylesheet" href="css/library/xyz.css"> -->
+    <!-- <link rel="stylesheet" href="css/library/xyz.css"> -->
 </head>
 <body>
 
@@ -45,64 +45,35 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
         <div class="container">
-            <h1 class="display-2">Airports</h1>
+            <h1 class="display-2">New Airport</h1>
         </div>
     </div>
 
     <div class="container">
-        <!-- row of add/search/delete buttons -->
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-1"><input type="text" id="searchairports" onkeyup="searchAirport()" placeholder="Search Airport" title="Search Airports"></div>
-            <div class="col-md-7"></div>
-            <div class="col-md-2"><button type='button' class='btn btn-success' data-toggle='modal' data-target='#newAirportModal' onclick='javascript:showModalNewAirport()'>Add New Airport</button></div>
-            <div class="col-md-1"></div>
-        </div>
+        <form>
 
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-                <table style="width:100%" class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>Airport name</th>
-                        <th>Location</th>
-                        <th>Planes</th>
-                    </tr>
-                    </thead>
-                    <tbody id="airports">
-                    </tbody>
-                </table>
-            </div>
+                <div class="form-group col-md-3">
+                    <label for="name">Airport Name:</label>
+                    <input type="text" class="form-control" id="name">
+                </div>
+                <div class="form-group col-md-5">
+                    <label for="location">Location:</label>
+                    <input type="text" class="form-control" id="location">
+                </div>
 
-        </div>
+        </form>
+        <a class="btn btn-secondary" href="index.html" role="button">Cancel &raquo;</a>
+        <a class="btn btn-success" href="#" onclick="addAirport();" role="button">Save Airport &raquo;</a>
+        <p></p>
+        <p id="confirmation"></p>
     </div>
 
-    <!-- Modal delete airport -->
-    <div class="modal fade" id="deleteAirportModal" tabindex="-1" role="dialog" aria-labelledby="deleteAirportModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="deleteAirportModalTitle">Delete Room</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Are you sure?</p>
-                    <p><div id="deleteName"></div></p>
-                </div>
-                <div class="modal-footer" id = "deleteModalFooter">
-                </div>
-            </div>
-        </div>
-    </div>
+
 </main>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="js/airports.js"></script>
+<script src="js/newairport.js"></script>
 </body>
 </html>

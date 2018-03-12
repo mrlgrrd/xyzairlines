@@ -26,14 +26,14 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Airports</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item" href="">New Airport</a>
+                        <a class="dropdown-item" href="newairport.html">New Airport</a>
                         <a class="dropdown-item" href="airports.html">View all</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Airplanes</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item" href="">New Airplane</a>
+                        <a class="dropdown-item" href="newairplane.html">New Airplane</a>
                         <a class="dropdown-item" href="airplanes.html">View all</a>
                     </div>
                 </li>
@@ -54,7 +54,7 @@
             <div class="col-md-1"></div>
             <div class="col-md-1"><input type="text" id="searchAirplanes" onkeyup="searchAirplane()" placeholder="Search Airplane" title="Search Airplane"></div>
             <div class="col-md-7"></div>
-            <div class="col-md-2"><button type='button' class='btn btn-success' data-toggle='modal' data-target='#newAirplaneModal' onclick='javascript:showModalNewAirplane()'>Add New Airplane</button></div>
+            <div class="col-md-2"><button type='button' class='btn btn-success' onclick='newairplane.html'>Add New Airplane</button></div>
             <div class="col-md-1"></div>
         </div>
 
@@ -85,7 +85,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="deleteAirplaneModalTitle">Delete Room</h5>
+                    <h5 class="modal-title" id="deleteAirplaneModalTitle">Delete Airplane</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -94,7 +94,7 @@
                     <p>Are you sure?</p>
                     <p><div id="deleteAirplane"></div></p>
                 </div>
-                <div class="modal-footer" id = "deleteModalFooter">
+                <div class="modal-footer" id="deleteModalFooter">
                 </div>
             </div>
         </div>
@@ -106,7 +106,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="fuelAirplaneModalTitle">Delete Room</h5>
+                    <h5 class="modal-title" id="fuelAirplaneModalTitle">Fuel up Airplane</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -115,7 +115,7 @@
                     <p>Are you sure?</p>
                     <p><div id="fuelAirplane"></div></p>
                 </div>
-                <div class="modal-footer" id = "fuelModalFooter">
+                <div class="modal-footer" id="fuelModalFooter">
                 </div>
             </div>
         </div>
@@ -127,7 +127,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="flyAirplaneModalTitle">Delete Room</h5>
+                    <h5 class="modal-title" id="flyAirplaneModalTitle">Fly airplane</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -139,7 +139,7 @@
                         <div id="airportOptions"></div>
                     </select>
                 </div>
-                <div class="modal-footer" id = "flyModalFooter">
+                <div class="modal-footer" id="flyModalFooter">
                 </div>
             </div>
         </div>

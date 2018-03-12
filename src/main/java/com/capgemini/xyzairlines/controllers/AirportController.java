@@ -32,6 +32,11 @@ public class AirportController {
         this.airportService.deleteAirport(id);
     }
 
+    @RequestMapping(value = "newairport", method = RequestMethod.POST)
+    public void newAirport(@RequestBody Airport airport){
+        this.airportService.save(airport);
+    }
+
     @RequestMapping(value = "getairplanes", method = RequestMethod.GET)
     public Iterable<Airplane> getAirplanes(){
         return this.airplaneService.allPlanes();
@@ -49,9 +54,15 @@ public class AirportController {
     }
 
     @RequestMapping(value = "flyplane", method = RequestMethod.PUT)
-    public void flyAirplane(Long id, @RequestBody Airport airport){
-        this.airplaneService.flyAirplane(id, airport);
+    public void flyAirplane(Long id, Long airportId){
+        this.airplaneService.flyAirplane(id, airportId);
     }
+
+    @RequestMapping(value = "newplane", method = RequestMethod.POST)
+    public void newAirplane(@RequestBody Airplane plane ){
+        this.airplaneService.save(plane);
+    }
+
 
 
 }

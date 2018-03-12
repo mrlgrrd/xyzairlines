@@ -49,8 +49,17 @@ public class AirplaneService {
      * this method updates the location of the plane + updates the fuel reserve.
      * @param id id of the plane
      */
-    public void flyAirplane(Long id, Airport airport) {
-        Airplane Plane = this.airplaneRepository.findOne(id);
+    public void flyAirplane(Long id, Long airportId) {
+        Airplane plane = this.airplaneRepository.findOne(id);
+        if(plane.getFuel() <= 2){
+            Airport airport = this.airportRepository.findOne(airportId);
+            plane.setAirport(airport);
+            plane.setFuel(plane.getFuel() - 2);
+        }
 
+    }
+
+    public void save(Airplane plane) {
+        this.airplaneRepository.save(plane);
     }
 }

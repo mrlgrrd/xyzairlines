@@ -15,8 +15,13 @@ function getAirplanes(){
 
                 $.each(data, function(index, current){
 
+                var airportName = "";
+                if(current.airport.name != null){
+                    airportName = current.airport.name;
+                }
 
-                var airplaneString = "<tr> <td>" + current.name + "</td> <td>  " + current.type + "</td> <td>  " + current.fuel +"</td> <td> " + current.airport.name +"</td> <td> " +
+
+                var airplaneString = "<tr> <td>" + current.name + "</td> <td>  " + current.type + "</td> <td>  " + current.fuel +"</td> <td> " + airportName +"</td> <td> " +
                 "<td><button type='button' class='btn btn-primary' data-toggle='modal' data-target='#fuelAirplaneModal' onclick='openFuelModal("+current.id+")'>Fuel up</button></td></td>" +
                 "<td><button type='button' class='btn btn-success' data-toggle='modal' data-target='#flyAirplaneModal' onclick='openFlyModal("+current.id+")'>Fly</button></td></td>" +
                 "<td><button type='button' class='btn btn-danger' data-toggle='modal' data-target='#deleteAirplaneModal' onclick='openDeleteModal("+current.id+", "+current.name+")'>Delete</button></td></td>";
@@ -35,7 +40,7 @@ function getAirplanes(){
 $(document).ready(getAirplanes());
 
 function openDeleteModal(id, name){
-    $("#deleteAirportModal").modal('show');
+    $("#deleteAirplaneModal").modal('show');
     var generateDeleteButtons = "<button type='button' class='btn btn-secondary' data-dismiss='modal'>Cancel</button>"
                                 +"<button type='button' class='btn btn-danger' data-dismiss='modal' onclick='deleteAirplane("+id+");'>Delete</button>";
     var nameString = "Delete Airplane "+ name;
@@ -60,10 +65,10 @@ function deleteAirplane(id){
 function openFuelModal(id, name){
     $("#fuelAirportModal").modal('show');
     var generateFuelButtons = "<button type='button' class='btn btn-secondary' data-dismiss='modal'>Cancel</button>"
-                                +"<button type='button' class='btn btn-danger' data-dismiss='modal' onclick='fuelAirplane("+id+");'>Delete</button>";
+                                +"<button type='button' class='btn btn-success' data-dismiss='modal' onclick='fuelAirplane("+id+");'>Fuel up</button>";
     var nameString = "Fuel up airplane "+ name;
     $("#deleteAirplane").text(nameString);
-    $("#deleteModalFooter").html(generateFuelButtons);
+    $("#fuelModalFooter").html(generateFuelButtons);
 }
 
 function fuelAirplane(id){
@@ -83,7 +88,7 @@ function fuelAirplane(id){
 function openFlyModal(id, name){
     $("#fuelAirportModal").modal('show');
     var generateFlyButtons = "<button type='button' class='btn btn-secondary' data-dismiss='modal'>Cancel</button>"
-                                +"<button type='button' class='btn btn-danger' data-dismiss='modal' onclick='flyAirplane("+id+");'>Delete</button>";
+                                +"<button type='button' class='btn btn-success' data-dismiss='modal' onclick='flyAirplane("+id+");'>Fly</button>";
     var nameString = "Fuel up airplane "+ name;
     $("#deleteAirplane").text(nameString);
     $("#deleteModalFooter").html(generateFlyButtons);
@@ -111,7 +116,7 @@ function flyAirplane(id){
 
     $.ajax({
             // waar moet hij de request op uitvoeren
-            url : "http://localhost:8080/api/airportcontroller/tankairplane?id=" + id,
+            url : "http://localhost:8080/api/airportcontroller/flyairplane?id=" + id,
             // type actie
             type : "put",
             // als de actie lukt, voer deze functie uit

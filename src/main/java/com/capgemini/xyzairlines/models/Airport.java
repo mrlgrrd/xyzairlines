@@ -31,6 +31,11 @@ public class Airport {
     public Airport() {
     }
 
+    public Airport(String name, String location) {
+        this.name = name;
+        this.location = location;
+    }
+
     /**
      * getters & setters
      */
