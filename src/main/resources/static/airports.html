@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+    <title>Airports</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/library/xyz.css">
+</head>
+<body>
+
+
+<main role="main">
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">XYZ Airline<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Airports</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="">New Airport</a>
+                        <a class="dropdown-item" href="airports.html">View all</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Airplanes</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="">New Airplane</a>
+                        <a class="dropdown-item" href="airplanes.html">View all</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-2">Airports</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- row of add/search/delete buttons -->
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-1"><input type="text" id="searchairports" onkeyup="searchAirport()" placeholder="Search Airport" title="Search Airports"></div>
+            <div class="col-md-7"></div>
+            <div class="col-md-2"><button type='button' class='btn btn-success' data-toggle='modal' data-target='#newAirportModal' onclick='javascript:showModalNewAirport()'>Add New Airport</button></div>
+            <div class="col-md-1"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <table style="width:100%" class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Airport name</th>
+                        <th>Location</th>
+                        <th>Planes</th>
+                    </tr>
+                    </thead>
+                    <tbody id="airports">
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
