@@ -41,7 +41,8 @@ public class AirplaneService {
      * @param id id of the plane
      */
     public void tankAirplane(Long id) {
-        Airplane Plane = this.airplaneRepository.findOne(id);
+        Airplane plane = this.airplaneRepository.findOne(id);
+        plane.setFuel(5);
 
     }
 
